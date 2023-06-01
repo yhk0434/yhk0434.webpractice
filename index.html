@@ -4,9 +4,36 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script>
-            $(document).ready(function(){
+            $(document).ready(function(event){
                 var menuButtonFlag = false;
                 var currentButton = $('#home');
+                var currentPage = $('#home_box');
+                var pcFlag = false
+
+                $('.fitpage').css({height:($(window).height()-$('#footer').height()-75).toString()+'px'});
+
+
+                window.addEventListener('resize',function() {
+                    if($(window).width() >= 1024)
+                    {
+                        pcFlag = true;
+                        $('#navbox').css({display:'block'});
+
+                    }
+                    else if(pcFlag){
+                        
+                        $('#navbox').css({display:'none'});
+                        $('#navbutton').css({"background-color":"#0000","box-shadow":"none"});
+                        $("#menuimg").attr({src:'./images/menuicon.png'});
+                        menuButtonFlag = false;
+                        pcFlag = false;
+                    }
+
+                    $('.fitpage').css({height:($(window).height()-$('#footer').height()-75).toString()+'px'});
+                   
+                    
+                });
+                
 
 
                 $('#navbutton').click(function(){
@@ -38,7 +65,14 @@
                     { 
                         $(this).removeClass('nav_basic').addClass('nav_focus');
                         currentButton.removeClass('nav_focus').addClass('nav_basic');
-                        currentButton = $(this);   
+                        currentButton = $(this);
+                        
+                        currentPage.toggle();
+                        $('#home_box').toggle();
+                        
+                        currentPage = $('#home_box');
+
+
                     }
                     
                 });
@@ -49,6 +83,10 @@
                         $(this).removeClass('nav_basic').addClass('nav_focus');
                         currentButton.removeClass('nav_focus').addClass('nav_basic');
                         currentButton = $(this);   
+                        currentPage.toggle();
+                        $('#about_box').toggle();
+                        
+                        currentPage = $('#about_box');
                     }
 
                 });
@@ -58,9 +96,29 @@
                     { 
                         $(this).removeClass('nav_basic').addClass('nav_focus');
                         currentButton.removeClass('nav_focus').addClass('nav_basic');
-                        currentButton = $(this);   
+                        currentButton = $(this);
+                        currentPage.toggle();
+                        $('#activity_box').toggle();
+                        currentPage = $('#activity_box');
                     }
                 });
+
+                $('#edu').click(function(){
+                    if(!(currentButton.attr('id')==$(this).attr('id')))
+                    { 
+                        $(this).removeClass('nav_basic').addClass('nav_focus');
+                        currentButton.removeClass('nav_focus').addClass('nav_basic');
+                        currentButton = $(this);
+                        currentPage.toggle();
+                        $('#edu_box').toggle();
+                        
+                        currentPage = $('#edu_box');
+
+
+                    }
+                });
+
+                
 
                 
                 
@@ -68,21 +126,45 @@
 
             });
 
+            
+            
+
         </script>
         <style>
+            
+            .display_none{
+                display: none;
+            }
+            .display_block{
+                display: block;
+            }
+            .float_l{
+                float: left;
+            }
+            .float_r{
+                float: right;
+            }
+            .hori_5px{
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            .width_100{
+                width: 100%;
+            }
             body{
                 margin: 0;
                 padding: 0;
                 overflow-y: scroll;
                 background-color:#F2F2F2;
+                overflow-x: hidden;
             }
             #container{
                 max-width: 1024px;
+                height: 70px;
 
             }
 
             #header{
-                padding-top:5px;
                 position: fixed;
                 margin: 0;
                 background-color: #4c5e40;
@@ -93,20 +175,19 @@
 
             #title{
                width: 100%;
-               margin: 0;
-               padding: 0;
-             
+               
+               height: 100%;
             }
 
             #titletxt{
                 display: inline-block;
-                padding-top: 10px;
-                padding-bottom: 8px;
+                padding-top: 20px;
                 padding-left: 10px;
 
                 font-weight: bolder;
                 color: #F2F2F2;
                 font-size: 24px;
+                height: 100%;
             }
 
             #navbox{
@@ -124,13 +205,8 @@
             }
 
             #navbutton{
-                width:50px;
-                height: 50px;
-                
-                
-
-                
-                background-color:  #202426;
+                width: 70px;
+                height: 100%;
                 float: right;
                 
                 text-align: center;
@@ -141,14 +217,13 @@
             }
             
             #menuimg{
-                
-                height: 14px;
-                margin-top: 0;
-                padding: 0;
+                height: 20px;
                 position: relative;
-                top:30%
+                top:25px;
+                
                 
             }
+            
             
             #home{
                 
@@ -200,38 +275,130 @@
                 display: none;
             }
             #contents{
-                padding-top: 80px;
-                width: 100%;
-                background-color: #F2F2F2;
-                height: 5000px;
-                border-radius: 60px 0 0 60px ;
+                padding-top: 70px;
+                max-width: 1024px;
+                
+                padding-left: 10px;
+                padding-right: 10px;
+                margin: 0 auto;
 
             }
             .middle_sort{
                 margin: 0 auto;
-                width: auto;
+                max-width: 1024px;
             }
 
             #About{
                 margin: 0 auto;
                 max-width: 1024;
             }
-            #contents{
-                
-            }
+           
             #footer{
                 margin: 0 auto;
-                height: 50px;
+                height: 80px;
                 max-width: 1024px;
-                background-color: #6C733D;
+                border-top: 5px solid  #6C733D;
             }
 
             .circle{
                 border-radius: 100%;
             }
+            #profile{
+                margin: 0 auto;
+                border-radius: 30px;
+                overflow: hidden;
+                display: block;
+            }
+            h1{
+                margin: 0;
+                font-size: 35px;
+            }
+
+            #name{
+                font-size: 30px;
+            }
+            .middle{
+                margin:0 auto;
+            }
+            
+            /* 강조효과 */
+            .r_border{
+                border-right: 3px solid #9FC131 ;
+            }
+            .l_border{
+                border-left: 3px solid #9FC131 ;
+            }
+            .b_border{
+                border-bottom: 3px solid #9FC131 ;
+            }
+            .t_border{
+                border-top: 3px solid #9FC131 ;
+            }
+            /* 윤곽 효과 */
+            .radius1{
+                border-radius: 10px;
+            }
+            .radius2{
+                border-radius: 5px;
+            }
+            /* overflow */
+            .overflow_h{
+                overflow: hidden;
+            }
+            .text_center{
+                text-align: center;
+            }
+            .no_deco{
+                text-decoration: none;
+            }
+            .no_deco:active{
+                text-decoration: none;
+            }
+
+            #miniprofile{
+                border-radius: 10px;
+                padding-top: 5px;
+                
+                font-weight: bolder;
+                color: #415137;
+            }
+            .inline_block{
+                display: inline-block;
+            }
+            
+
+            #educurrent{
+                background-color: #A3AB78;
+                border-radius: 5px;
+                color: #F2F2F2;
+                
+                padding-top: 5px;
+                padding-bottom: 5px;
+                width: 100%;
+            }
+            #educurrent h3{
+                margin:0;
+                padding: 0;
+            }
+            .icon{
+                border-radius: 100%;
+                background-color: #F2F2F2;
+                box-shadow: 0 0 5px #202426;
+                margin-left: 10px;
+                width: 30px;
+
+            }
 
             
-            @media screen and (min-width:1000px){
+
+            @media  screen and (min-width:450) {
+                h3{
+                    font-size: 24px;
+                }
+            }
+            
+
+            @media screen and (min-width:1024px){
                 
                 #header{
                     overflow: hidden;
@@ -239,14 +406,14 @@
                 }
                 #container{
                     margin: 0 auto;
-                    height: 100%;
                     
+                                        
                 }
             
                 #title{
-                    display: flex;
                     float: left;
                     width: auto;
+                    height: 100%;
                     align-items: center;
 
                 }
@@ -267,44 +434,53 @@
                     background-color: #0000;
                     
                 }
+                #navli{
+                    height: 100%;
+                }
                 .navs{
                     float: right;
                     width: 120px;
-                    height: 100%;
-                    margin-right:2px;
-                    margin-left:2px;
-                    
+                    height: 50px;
+                    padding-left: 0;
+                    margin: 0;
                     text-align: center;
+                    padding-top: 20px;
+                    padding-bottom: 0;
+
                 }
                 .nav_basic{
-                    padding-left: 0;
+                    
+                    height: 50px;
                     
                 }
                 .nav_focus{
                     border-bottom: 5px solid #9FC131;
                     border-left: 0px;
-                    
+                    height: 45px;
                     margin-top: 0px;
                     padding-left:0px ;
                     background-color: #F2F2F2;
-                    border-radius: 5px;
-                    box-shadow: 0 0 2px black;
+                    
+                    box-shadow: 0 0 5px black;
                     
                 }
                 
                 .nav_basic:hover{
                     margin-top: 0;
-                    border-bottom: 5px solid #9FC131;
-                    background-color: #0000;
-                    border-radius: 5px;
+                    
+                    background-color: #415137;
                     
 
                 }
                 .content{
                     margin: 0 auto;
-                    width: 1024px;
-                    height: 5000px;
-                    box-shadow: 0 0 5px #202426;
+                    overflow: hidden;
+                    padding-bottom: 30px;
+                    
+                }
+
+                #name{
+                    font-size: xx-large;
                 }
                 
             }
@@ -327,9 +503,12 @@
                 
                 <div id="navbox">
                     <ul id="navli"  class="list_no_deco">
+                        
+                        
+                        <li id="activity" class="nav_basic navs">Activity</li>
+                        <li id="edu" class="nav_basic navs">Education</li>
+                        <li id="about" class="nav_basic navs">About</li>
                         <li id="home"  class="nav_focus navs">Home</li>
-                        <li id="about" class="nav_basic navs">About me</li>
-                        <li id="activity" class="nav_basic navs">My activity</li>
                     </ul>
                 </div>
                 <div id="meunbutton"></div>
@@ -337,27 +516,97 @@
             
         </div>
         <div id="contents">
-            <div class="Home ">
-                <div class="content"></div>
+
+            <!-- 홈 페이지 -->
+            <div id="home_box" class="fitpage">
+                <div class="content" id="profile_home">
+                    
+                    
+                    <img src="./images/profile.jpg" alt="" width="150px" id="profile" class="middle">
+                    
+                    <div id="name"  class="width_100">
+                        <h1 class="float_l " style="color:#202426; margin-right: 10px" >YEONGHUN</h1>
+                        <h1 class="float_l " style="color:#9DA65D">KIM</h1>
+                    </div>
+                
+                    
+                </div>
+                <div id="contact" class="middle">
+                    <a href="https://www.acmicpc.net/user/yhk0434" class="icon"><img src="images/boj.png" alt="" width="30px"></a>
+                    <a href="https://www.instagram.com/yeonghun816/" class="icon" ><img src="images/instagram.png" alt="" width="30px"></a>
+                    <a href="https://github.com/yhk0434" class="icon"><img src="images/GitHub-Mark.png" alt="" width="30px"></a>    
+                </div>  
+
                 <div class="content"></div>
             </div>
-            <div id="About" class="middle_sort">
-                <div class="content" id="profile" style="display: none;">
-                    <img src="./images/profile.jpg" alt="" width="150px">
-                    <p>
-                        이름: 김영훈
-                        <br>
-                        생일: 2003.01.22 (만 20세)
-                        <br>
-                        TEL : 010-6613-0434
-                        <br>
-                        E-mail : typhoon0434@gmail.com
 
-                    </p>
+            <!-- about 페이지 -->
+            <div id="about_box" class="middle_sort dispaly_none">
+                <div class="content" style="overflow:hidden">
+                    <h1 style="color:#9DA65D" class="b_border" style="margin-bottom: 10px;">Profile</h1>
+                    <div class="float_l">
+                        <img src="./images/profile.jpg" alt="" width="80px" class="radius1">
+                    </div>
+                    
+                    <div id="miniprofile" class="float_l" style="padding-left: 5px;">
+                        <b>Name:</b> YeongHun Kim
+                        <br>   
+                        <b>Birth:</b> 2003.01.22
+                        <br>
+                        <b>TEL :</b> 010-6613-0434
+                        <br>
+                        <b>E-mail:</b> <a href='mailto:typhoon0434@gmail.com'>here</a>
+                    </div>
+                    <div>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="content" style="overflow:hidden">
+                    <h1 style="color:#9DA65D" class="b_border" style="">Education</h1>
+                    <div class="float_l">
+                        <img src="" alt="" width="" class="radius1">
+                    </div>
+                    <div id="edu" class="float_l">
+                        <div></div>
+                        <h3>2014 : 명일초등학교 졸업</h3>
+                        <h3>2017 : 강일중학교 졸업</h3>
+                        <h3>2021 : 한영고등학교 졸업</h3>
+                        <div id="educurrent">
+                            <h3 style="display: inline-block">2021~: 강원대학교 </h3>
+                            <h3 style="display: inline-block">컴퓨터공학과 21학번</h3>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="content" style="overflow:hidden">
+                    <h1 style="color:#9DA65D" class="b_border" style=""></h1>
+                    <div class="float_l">
+                        <img src="" alt="" width="" class="radius1">
+                    </div>
+                    <div id="" class="float_l">
+                        
+                        
+                    </div>
                 </div>
                 <div class="content">
                     <img src="./images/" alt="">
                 </div>
+
+            </div>
+            <!-- activity 페이지 -->
+
+            <div id="activity_box" class="dispaly_none">
+                <div id="radio">
+                    <img src="" alt="">
+                </div>
+
+            </div>
+            <!-- Education 페이지 -->
+            <div id="edu_box">
+
             </div>
 
             
