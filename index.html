@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                var menuButtonFlag = false;
+                var currentButton = $('#home');
+
+
+                $('#navbutton').click(function(){
+                       
+                        $('#navbox').slideToggle('fast');
+                    
+                        if(menuButtonFlag)
+                        {
+                            
+                            $(this).css({"background-color":"#0000","box-shadow":"none"});
+                            $("#menuimg").attr({src:'./images/menuicon.png'});
+                            menuButtonFlag = false;
+                        }
+                        else{
+                            
+                            
+                            $(this).css({"background-color":"#9DA65D","box-shadow":"0 0 3px grey","border-radius":"10% 10% 0 0"});
+                            $("#menuimg").attr({src:'./images/arrowup.png'});
+    
+                            menuButtonFlag = true;
+    
+                        }
+                });
+
+
+
+                $('#home').click(function(){
+                    if(!(currentButton.attr('id')==$(this).attr('id')))
+                    { 
+                        $(this).removeClass('nav_basic').addClass('nav_focus');
+                        currentButton.removeClass('nav_focus').addClass('nav_basic');
+                        currentButton = $(this);   
+                    }
+                    
+                });
+
+                $('#about').click(function(){
+                    if(!(currentButton.attr('id')==$(this).attr('id')))
+                    { 
+                        $(this).removeClass('nav_basic').addClass('nav_focus');
+                        currentButton.removeClass('nav_focus').addClass('nav_basic');
+                        currentButton = $(this);   
+                    }
+
+                });
+
+                $('#activity').click(function(){
+                    if(!(currentButton.attr('id')==$(this).attr('id')))
+                    { 
+                        $(this).removeClass('nav_basic').addClass('nav_focus');
+                        currentButton.removeClass('nav_focus').addClass('nav_basic');
+                        currentButton = $(this);   
+                    }
+                });
+
+                
+                
+
+
+            });
+
+        </script>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                overflow-y: scroll;
+                background-color:#F2F2F2;
+            }
+            #container{
+                max-width: 1024px;
+
+            }
+
+            #header{
+                padding-top:5px;
+                position: fixed;
+                margin: 0;
+                background-color: #4c5e40;
+                color: #F2F2F2;
+                width: 100%;
+                box-shadow: 0 0 5px #202426;
+            }
+
+            #title{
+               width: 100%;
+               margin: 0;
+               padding: 0;
+             
+            }
+
+            #titletxt{
+                display: inline-block;
+                padding-top: 10px;
+                padding-bottom: 8px;
+                padding-left: 10px;
+
+                font-weight: bolder;
+                color: #F2F2F2;
+                font-size: 24px;
+            }
+
+            #navbox{
+                padding-top: 10px;
+                padding-bottom: 15px ;
+                background-color: #9DA65D;
+                display: none;
+                
+            }
+
+            #navli{
+                margin: 0;
+                padding: 0;
+
+            }
+
+            #navbutton{
+                width:50px;
+                height: 50px;
+                
+                
+
+                
+                background-color:  #202426;
+                float: right;
+                
+                text-align: center;
+                
+                border-radius: 10%;
+                
+                
+            }
+            
+            #menuimg{
+                
+                height: 14px;
+                margin-top: 0;
+                padding: 0;
+                position: relative;
+                top:30%
+                
+            }
+            
+            #home{
+                
+            }
+            #about{
+                
+            }
+            #activity{
+                
+            }
+
+            .list_no_deco{
+                list-style: none;
+
+            }
+            ul li{
+                margin: 0;
+            }
+            
+            .navs{
+                margin-top: 2px;
+                margin-bottom: 2px;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                width: 100%;
+                margin-left: 2px;
+                margin-right: 2px;
+
+            }
+
+            .nav_basic{                
+                padding-left: 10px;
+                
+                
+            }
+
+
+            .nav_focus{
+                
+                color: #6C733D;
+                border-left:5px solid  #9FC131;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: #F2F2F2;
+                box-shadow: 0 0 5px grey;
+                
+            }
+            .dispaly_none{
+                display: none;
+            }
+            #contents{
+                padding-top: 80px;
+                width: 100%;
+                background-color: #F2F2F2;
+                height: 5000px;
+                border-radius: 60px 0 0 60px ;
+
+            }
+            .middle_sort{
+                margin: 0 auto;
+                width: auto;
+            }
+
+            #About{
+                margin: 0 auto;
+                max-width: 1024;
+            }
+            #contents{
+                
+            }
+            #footer{
+                margin: 0 auto;
+                height: 50px;
+                max-width: 1024px;
+                background-color: #6C733D;
+            }
+
+            .circle{
+                border-radius: 100%;
+            }
+
+            
+            @media screen and (min-width:1000px){
+                
+                #header{
+                    overflow: hidden;
+                    
+                }
+                #container{
+                    margin: 0 auto;
+                    height: 100%;
+                    
+                }
+            
+                #title{
+                    display: flex;
+                    float: left;
+                    width: auto;
+                    align-items: center;
+
+                }
+                #titletxt{
+                    float: left;
+
+                }
+                #navbutton{
+                    display: none;
+                }
+                #navbox{
+                    float: right;
+                    display: block;
+                    
+                    height: 100%;
+                    padding: 0;
+                    border-radius: 10px;
+                    background-color: #0000;
+                    
+                }
+                .navs{
+                    float: right;
+                    width: 120px;
+                    height: 100%;
+                    margin-right:2px;
+                    margin-left:2px;
+                    
+                    text-align: center;
+                }
+                .nav_basic{
+                    padding-left: 0;
+                    
+                }
+                .nav_focus{
+                    border-bottom: 5px solid #9FC131;
+                    border-left: 0px;
+                    
+                    margin-top: 0px;
+                    padding-left:0px ;
+                    background-color: #F2F2F2;
+                    border-radius: 5px;
+                    box-shadow: 0 0 2px black;
+                    
+                }
+                
+                .nav_basic:hover{
+                    margin-top: 0;
+                    border-bottom: 5px solid #9FC131;
+                    background-color: #0000;
+                    border-radius: 5px;
+                    
+
+                }
+                .content{
+                    margin: 0 auto;
+                    width: 1024px;
+                    height: 5000px;
+                    box-shadow: 0 0 5px #202426;
+                }
+                
+            }
+            
+            
+
+
+        </style>
+        
+    </head>
+    <body>
+        <div id="header">
+            <div id="container" >
+                <div id="title">
+                    <div id="titletxt"><a>YEONGHUN KIM</a></div>
+                    <div id="navbutton">
+                        <img src="./images/menuicon.png" alt="" id="menuimg">
+                    </div>
+                </div>
+                
+                <div id="navbox">
+                    <ul id="navli"  class="list_no_deco">
+                        <li id="home"  class="nav_focus navs">Home</li>
+                        <li id="about" class="nav_basic navs">About me</li>
+                        <li id="activity" class="nav_basic navs">My activity</li>
+                    </ul>
+                </div>
+                <div id="meunbutton"></div>
+            </div>
+            
+        </div>
+        <div id="contents">
+            <div class="Home ">
+                <div class="content"></div>
+                <div class="content"></div>
+            </div>
+            <div id="About" class="middle_sort">
+                <div class="content" id="profile" style="display: none;">
+                    <img src="./images/profile.jpg" alt="" width="150px">
+                    <p>
+                        이름: 김영훈
+                        <br>
+                        생일: 2003.01.22 (만 20세)
+                        <br>
+                        TEL : 010-6613-0434
+                        <br>
+                        E-mail : typhoon0434@gmail.com
+
+                    </p>
+                </div>
+                <div class="content">
+                    <img src="./images/" alt="">
+                </div>
+            </div>
+
+            
+        </div>
+        <div id="footer">
+            <div id="contact" class="middle_sort">
+                <a href="https://solved.ac/profile/yhk0434" ><img src="./images/boj.png" alt="" width="30px" class="circle"></a>
+            </div>
+        </div> 
+    </body>
+</html>
