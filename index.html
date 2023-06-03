@@ -14,7 +14,7 @@
 
 
                 window.addEventListener('resize',function() {
-                    if($(window).width() >= 1024)
+                    if($(window).width() >= 1024 && !pcFlag)
                     {
                         pcFlag = true;
                         $('#navbox').css({display:'block'});
@@ -425,6 +425,10 @@
                     margin-top: 20px;
                     margin-bottom: 20px;
                 }
+            }
+
+            @media screen and (min-height:1024){
+                
             }
 
 
