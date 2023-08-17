@@ -21,7 +21,7 @@
 
                     }
                     else if(pcFlag){
-                        
+
                         $('#navbox').css({display:'none'});
                         $('#navbutton').css({"background-color":"#0000","box-shadow":"none"});
                         $("#menuimg").attr({src:'./images/menuicon.png'});
@@ -29,33 +29,33 @@
                         pcFlag = false;
                     }
 
-                    
+
                     $('.fitpage').css({height:($(window).height()-$('#footer').height()-125).toString()+'px'});
-                   
-                    
+
+
                 });
-                
+
 
 
                 $('#navbutton').click(function(){
-                       
+
                         $('#navbox').slideToggle('fast');
-                    
+
                         if(menuButtonFlag)
                         {
-                            
+
                             $(this).css({"background-color":"#0000","box-shadow":"none"});
                             $("#menuimg").attr({src:'./images/menuicon.png'});
                             menuButtonFlag = false;
                         }
                         else{
-                            
-                            
+
+
                             $(this).css({"background-color":"#9DA65D","box-shadow":"0 0 3px grey","border-radius":"10% 10% 0 0"});
                             $("#menuimg").attr({src:'./images/arrowup.png'});
-    
+
                             menuButtonFlag = true;
-    
+
                         }
                 });
 
@@ -63,30 +63,30 @@
 
                 $('#home').click(function(){
                     if(!(currentButton.attr('id')==$(this).attr('id')))
-                    { 
+                    {
                         $(this).removeClass('nav_basic').addClass('nav_focus');
                         currentButton.removeClass('nav_focus').addClass('nav_basic');
                         currentButton = $(this);
-                        
+
                         currentPage.toggle();
                         $('#home_box').toggle();
-                        
+
                         currentPage = $('#home_box');
 
 
                     }
-                    
+
                 });
 
                 $('#about').click(function(){
                     if(!(currentButton.attr('id')==$(this).attr('id')))
-                    { 
+                    {
                         $(this).removeClass('nav_basic').addClass('nav_focus');
                         currentButton.removeClass('nav_focus').addClass('nav_basic');
-                        currentButton = $(this);   
+                        currentButton = $(this);
                         currentPage.toggle();
                         $('#about_box').toggle();
-                        
+
                         currentPage = $('#about_box');
                     }
 
@@ -94,7 +94,7 @@
 
                 $('#activity').click(function(){
                     if(!(currentButton.attr('id')==$(this).attr('id')))
-                    { 
+                    {
                         $(this).removeClass('nav_basic').addClass('nav_focus');
                         currentButton.removeClass('nav_focus').addClass('nav_basic');
                         currentButton = $(this);
@@ -104,18 +104,18 @@
                     }
                 });
 
-                
 
-                
 
-                
-                
+
+
+
+
 
 
             });
 
-            
-            
+
+
 
         </script>
         <style>
@@ -124,7 +124,7 @@
                 padding: 30px;
                 font-size: 12px;
             }
-            
+
             .display_none{
                 display: none;
             }
@@ -168,7 +168,7 @@
 
             #title{
                width: 100%;
-               
+
                height: 100%;
             }
 
@@ -188,7 +188,7 @@
                 padding-bottom: 15px ;
                 background-color: #9DA65D;
                 display: none;
-                
+
             }
 
             #navli{
@@ -201,31 +201,31 @@
                 width: 70px;
                 height: 100%;
                 float: right;
-                
+
                 text-align: center;
-                
+
                 border-radius: 10%;
-                
-                
+
+
             }
-            
+
             #menuimg{
                 height: 20px;
                 position: relative;
                 top:25px;
-                
-                
+
+
             }
-            
-            
+
+
             #home{
-                
+
             }
             #about{
-                
+
             }
             #activity{
-                
+
             }
 
             .list_no_deco{
@@ -235,7 +235,7 @@
             ul li{
                 margin: 0;
             }
-            
+
             .navs{
                 margin-top: 2px;
                 margin-bottom: 2px;
@@ -247,10 +247,10 @@
 
             }
 
-            .nav_basic{                
+            .nav_basic{
                 padding-left: 10px;
-                
-                
+
+
             }
 
             #contact{
@@ -261,14 +261,14 @@
 
 
             .nav_focus{
-                
+
                 color: #6C733D;
                 border-left:5px solid  #9FC131;
                 padding-left: 5px;
                 font-weight: 600;
                 background-color: #F2F2F2;
                 box-shadow: 0 0 5px grey;
-                
+
             }
             .dispaly_none{
                 display: none;
@@ -276,7 +276,7 @@
             #contents{
                 padding-top: 70px;
                 max-width: 1024px;
-                
+
                 padding-left: 10px;
                 padding-right: 10px;
                 margin: 0 auto;
@@ -294,7 +294,7 @@
                 margin: 0 auto;
                 max-width: 1024;
             }
-           
+
             #footer{
                 margin: 0 auto;
                 height: 30px;
@@ -327,7 +327,7 @@
             .middle{
                 margin:0 auto;
             }
-            
+
             /* 강조효과 */
             .r_border{
                 border-right: 3px solid #9FC131 ;
@@ -366,19 +366,19 @@
                 padding-top: 5px;
                 font-size: 20px;
                 font-weight: bolder;
-                
-                
+
+
             }
             .inline_block{
                 display: inline-block;
             }
-            
+
 
             #educurrent{
                 background-color: #A3AB78;
                 border-radius: 5px;
                 color: #F2F2F2;
-                
+
                 padding-top: 5px;
                 padding-bottom: 5px;
                 width: 100%;
@@ -388,23 +388,23 @@
                 padding: 0;
             }
             .icon{
-                
+
                 background-color: #F2F2F2;
                 box-shadow: 0 0 5px #202426;
                 margin-left: 10px;
                 width: 50px;
-                
-                
+
+
             }
 
-            
 
-           
+
+
             .boxcontents{
                 padding-bottom: 30px;
 
             }
-            
+
             @media  screen and (min-height:300px) {
                 #name{
                     padding-top:30px;
@@ -413,7 +413,7 @@
                     margin-top: 15px;
                 }
             }
-           
+
             @media screen and (min-height:450px) {
                 #name{
                     padding-top:100px;
@@ -428,12 +428,12 @@
             }
 
             @media screen and (min-height:1024){
-                
+
             }
 
 
 
-            
+
 
             @media  screen and (min-width:450px) and (min-height:450px){
                 h3{
@@ -455,27 +455,27 @@
                 }
                 #miniprofile{
                     padding-left: 25px;
-                
+
                 }
                 .icon{
                     width: 80px;
                 }
-                
+
             }
-            
+
 
             @media screen and (min-width:1024px) and (min-width:450px){
-                
+
                 #header{
                     overflow: hidden;
-                    
+
                 }
                 #container{
                     margin: 0 auto;
-                    
-                                        
+
+
                 }
-            
+
                 #title{
                     float: left;
                     width: auto;
@@ -493,12 +493,12 @@
                 #navbox{
                     float: right;
                     display: block;
-                    
+
                     height: 100%;
                     padding: 0;
                     border-radius: 10px;
                     background-color: #0000;
-                    
+
                 }
                 #navli{
                     height: 100%;
@@ -515,9 +515,9 @@
 
                 }
                 .nav_basic{
-                    
+
                     height: 50px;
-                    
+
                 }
                 .nav_focus{
                     border-bottom: 5px solid #9FC131;
@@ -526,23 +526,23 @@
                     margin-top: 0px;
                     padding-left:0px ;
                     background-color: #F2F2F2;
-                    
+
                     box-shadow: 0 0 5px black;
-                    
+
                 }
-                
+
                 .nav_basic:hover{
                     margin-top: 0;
-                    
+
                     background-color: #415137;
-                    
+
 
                 }
                 .content{
                     margin: 0 auto;
                     overflow: hidden;
                     padding-bottom: 30px;
-                    
+
                 }
 
                 #name{
@@ -553,7 +553,7 @@
                     width: 200px;
                 }
                 #miniprofile{
-                    
+
                     font-size: 30px;
                 }
                 #name h1{
@@ -586,13 +586,13 @@
                     padding-left: 25px;
                     padding-right: 50px;
                 }
-                
+
             }
             .logos{
-                
+
                 width: 100px;
                 padding-top: 30px;
-                
+
 
             }
             #profile_box{
@@ -604,12 +604,12 @@
 
             .atttxt{
                 color: #9FC131;
-                
+
 
             }
 
         </style>
-        
+
     </head>
     <body>
         <div id="header">
@@ -620,11 +620,11 @@
                         <img src="./images/menuicon.png" alt="" id="menuimg">
                     </div>
                 </div>
-                
+
                 <div id="navbox">
                     <ul id="navli"  class="list_no_deco">
-                        
-                        
+
+
                         <li id="activity" class="nav_basic navs">Experience</li>
                         <li id="about" class="nav_basic navs">About</li>
                         <li id="home"  class="nav_focus navs">Home</li>
@@ -632,26 +632,26 @@
                 </div>
                 <div id="meunbutton"></div>
             </div>
-            
+
         </div>
         <div id="contents">
 
             <!-- 홈 페이지 -->
             <div id="home_box" class="fitpage">
                 <div class="content overflow_h" id="profile_home">
-                    
-                    
+
+
                     <div id="name"  class="width_100">
                         <h1 class="float_l names" style="color:#202426; margin-right: 10px" >YEONGHUN</h1>
                         <h1 class="float_l names" style="color:#9DA65D">KIM</h1>
-                        
+
                     </div>
-                    
-                
-                    
+
+
+
                 </div>
                 <div>
-                    
+
                 </div>
                 <div id="contact" class="display_block width_100">
                     <div class="">
@@ -664,36 +664,39 @@
                         <a href="https://www.instagram.com/yeonghun816/" class="no_deco" >
                             <img src="images/instagram.png" alt=""  class="circle icon">
                         </a>
-                    
+                        <a href="https://twitter.com/longtai122" class="no_deco" >
+                            <img src="images/twitter.png" alt=""  class="circle icon">
+                        </a>
+
                     </div>
-                        
-                </div>  
+
+                </div>
             </div>
 
             <!-- about 페이지 -->
             <div id="about_box" class="middle_sort dispaly_none">
                 <div class="content" style="overflow:hidden">
                     <h1 style="color:#9DA65D" class="b_border">Profile</h1>
-                    
+
                     <div id="profile_box" >
                         <div class="float_l" >
                             <img src="./images/profile.jpg" alt="" width="100%" class="radius1" id="profile_img" >
                         </div>
-                        
+
                         <div id="miniprofile" class="float_l" >
                             <p>
                                 <b class="atttxt">Name:</b> YeongHun Kim
-                                <br>   
+                                <br>
                                 <b class="atttxt">Birth:</b> 2003.01.22
                                 <br>
                                 <b class="atttxt">TEL :</b> (+82)10-6613-0434
                                 <br>
                                 <b class="atttxt">E-mail:</b> <a href='mailto:typhoon0434@gmail.com' class="no_deco">Here</a>
                             </p>
-                            
+
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="content" style="overflow:hidden">
@@ -710,10 +713,10 @@
                              I have a strong interest in both the graphics and backend fields. My goal is to become a skilled developer in the future, and I am putting in continuous efforts to achieve that.
                             <br>
                             <br>
-                             During my studies, I have gained a solid foundation in programming languages such as Java and Python. I enjoy exploring the world of computer graphics, learning about rendering techniques, and creating visually appealing designs. 
+                             During my studies, I have gained a solid foundation in programming languages such as Java and Python. I enjoy exploring the world of computer graphics, learning about rendering techniques, and creating visually appealing designs.
                             <br>
                             <br>
-                             I like actively participating in online communities and forums to stay up-to-date with the latest trends and advancements in the tech industry. and I believe that being a great developer not only requires technical knowledge but also effective communication and teamwork skills. 
+                             I like actively participating in online communities and forums to stay up-to-date with the latest trends and advancements in the tech industry. and I believe that being a great developer not only requires technical knowledge but also effective communication and teamwork skills.
                             <br>
                             <br>
                              Thank you for your time, and I look forward to connecting with like-minded individuals who share the same passion for technology and development.
@@ -738,10 +741,10 @@
                             <br>
                             <deco style="color: grey;">Division of Computer Science</deco>
                         </h3>
-                        
+
                     </div>
                 </div>
-                
+
                 <div class="content" style="overflow:hidden">
                     <h1 style="color:#9DA65D" class="b_border" style="">Studying Skill</h1>
                     <div id="">
@@ -752,7 +755,7 @@
 
                         <img src="./images/python.png" alt="" class="logos">
                         <img src="./images/haxe.png" alt="" class="logos">
-                        
+
                         <img src="./images/html.png" alt=""  class="logos">
                         <img src="./images/css.png" alt=""  class="logos">
                         <img src="./images/js.png" alt=""  class="logos">
@@ -760,7 +763,7 @@
                         <img src="./images/opengl.jpg" alt=""  class="logos">
 
 
-     
+
                     </div>
                 </div>
                 <div class="content">
@@ -772,23 +775,23 @@
 
             <div id="activity_box" class="dispaly_none overflow_h">
                 <div class="boxcontents overflow_h" >
-                    
+
                     <h1 class="b_border " style="margin-bottom: 30px;">Radiosonde</h1>
-                    
+
                     <div class="float_l" width="100%">
                         <img src="images/radiosonde.jpg" alt=""  id="radioimg" width="100%" >
 
                     </div>
 
 
-                    
-                    
+
+
                     <div class="float_l" id="radio_p">
 
-                        <p>During my high school days, my friends and I embarked on an project utilizing Arduino. 
+                        <p>During my high school days, my friends and I embarked on an project utilizing Arduino.
                             <br>
                             <br>
-                            Our main objective was to observe the concentration of fine particulate matter in the upper atmosphere. 
+                            Our main objective was to observe the concentration of fine particulate matter in the upper atmosphere.
                             <br>
                             <br>
                             Unfortunately, the sensor we intended to use for this purpose malfunctioned, so we were unable to achieve significant results in that specific area.
@@ -805,31 +808,31 @@
 
                     <div class="float_l" id="his_img">
                         <img src="./images/historymusium.jpg" alt="" width="100%">
-                        
+
                     </div>
                     <div class="float_l" id="glocal">
                         <p>
                             Participate in the college career exploration program, Glocal Pathfinders, was a remarkable experience that greatly aided me in exploring my future path.
                             <br>
                             <br>
-                            the Glocal Pathfinders program exposed me to various facets of the tech industry, allowing me to gain a deeper understanding of different career paths and their requirements. 
+                            the Glocal Pathfinders program exposed me to various facets of the tech industry, allowing me to gain a deeper understanding of different career paths and their requirements.
                             <br>
                             <br>
                             It was a transformative experience that reaffirmed my passion for technology and provided valuable guidance for my future endeavors
                         </p>
-                        
-                        
+
+
                     </div>
                 </div>
-                
+
 
             </div>
-            
+
         </div>
         <div id="footer">
             <div id="contact" class="middle_sort text_center">
                 <h4>TEL: (+82)10-6613-0434 | E-mail: typhoon0434@gmail.com</h4>
             </div>
-        </div> 
+        </div>
     </body>
 </html>
